@@ -30,6 +30,7 @@
     "import/prefer-default-export": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "@typescript-eslint/no-empty-interface": "off"
   }
 }
