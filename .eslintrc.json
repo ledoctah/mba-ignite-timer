@@ -33,6 +33,7 @@
     "import/extensions": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error"
+    "@typescript-eslint/no-shadow": "error",
+    "no-param-reassign": "off"
   }
 }
