@@ -3,14 +3,14 @@ import { useContext, useEffect } from 'react';
 
 import { CountdownContainer, Separator } from './styles';
 
-import { CyclesContext } from '../..';
+import { CyclesContext } from '../../../../contexts/CyclesContext';
 
 export function Countdown() {
   const {
     activeCycle,
     activeCycleId,
     amountSecondsPassed,
-    finishCycle,
+    finishCurrentCycle,
     setSecondsPassed,
   } = useContext(CyclesContext);
 
@@ -34,7 +34,7 @@ export function Countdown() {
         );
 
         if (secondsDifference >= totalSeconds) {
-          finishCycle();
+          finishCurrentCycle();
           clearInterval(interval);
         } else {
           setSecondsPassed(secondsDifference);
@@ -45,7 +45,7 @@ export function Countdown() {
     return () => {
       clearInterval(interval);
     };
-  }, [activeCycle, totalSeconds, activeCycleId, finishCycle]);
+  }, [activeCycle, totalSeconds, activeCycleId, finishCurrentCycle]);
 
   useEffect(() => {
     if (activeCycle) {
